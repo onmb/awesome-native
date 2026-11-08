@@ -19,6 +19,8 @@ applications.
 - [Graphics and creation](#graphics-and-creation)
 - [Communication and remote access](#communication-and-remote-access)
 - [Games](#games)
+- [Native GUI development frameworks](#native-gui-development-frameworks)
+- [Related native UI and rendering libraries](#related-native-ui-and-rendering-libraries)
 - [Excluded from this list](#excluded-from-this-list)
 - [Contributing](#contributing)
 
@@ -116,6 +118,67 @@ applications.
 | Application | Use | Toolkit / implementation | Repository |
 | --- | --- | --- | --- |
 | [Lutris](https://lutris.net/) | Game manager | GTK | [lutris/lutris](https://github.com/lutris/lutris) |
+
+## Native GUI development frameworks
+
+These frameworks are useful for building native desktop applications. Some use
+the operating system's own controls directly, while others provide a
+cross-platform native desktop toolkit or renderer rather than a webview.
+
+| Framework | Platforms | Languages | Model |
+| --- | --- | --- | --- |
+| [AppKit](https://developer.apple.com/documentation/appkit) | macOS | Swift, Objective-C | Apple's native desktop widget framework |
+| [SwiftUI](https://developer.apple.com/xcode/swiftui/) | macOS, iOS, visionOS | Swift | Apple's declarative native UI framework |
+| [Win32](https://learn.microsoft.com/en-us/windows/win32/) | Windows | C, C++ and others | Windows' foundational native desktop API |
+| [WinUI 3](https://learn.microsoft.com/en-us/windows/apps/winui/winui3/) | Windows | C++, C#, Rust and others | Modern Windows native UI framework |
+| [WPF](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/) | Windows | .NET languages | Windows desktop UI framework with XAML |
+| [GTK](https://www.gtk.org/) | Linux, Windows, macOS | C and language bindings | Cross-platform native widget toolkit |
+| [Qt](https://www.qt.io/) | Windows, macOS, Linux and more | C++, Python and bindings | Cross-platform native desktop framework |
+| [wxWidgets](https://www.wxwidgets.org/) | Windows, macOS, Linux and more | C++ and language bindings | Native-widget abstraction layer |
+| [FLTK](https://www.fltk.org/) | Windows, macOS, Linux and more | C++ | Lightweight cross-platform GUI toolkit |
+| [JUCE](https://juce.com/) | Windows, macOS, Linux and more | C++ | Cross-platform desktop and audio application framework |
+| [Slint](https://slint.dev/) | Windows, macOS, Linux and more | Rust, C++, JavaScript, Python | Declarative native desktop UI toolkit |
+| [Flutter](https://flutter.dev/) | Windows, macOS, Linux and more | Dart | Cross-platform UI toolkit with its own native desktop renderer |
+| [Iced](https://iced.rs/) | Windows, macOS, Linux and more | Rust | Declarative, Elm-inspired GUI framework |
+| [Relm4](https://relm4.org/) | Linux and more | Rust | GTK 4 framework inspired by Elm and React |
+| [Xilem](https://github.com/linebender/xilem) | Windows, macOS, Linux and more | Rust | Declarative GUI framework built around native app architecture |
+| [Dear ImGui](https://github.com/ocornut/imgui) | Windows, macOS, Linux and more | C++ | Immediate-mode, renderer-agnostic GUI library |
+| [egui](https://github.com/emilk/egui) | Windows, macOS, Linux and more | Rust | Immediate-mode GUI library with native desktop integrations |
+| [Nuklear](https://github.com/Immediate-Mode-UI/Nuklear) | Windows, macOS, Linux and more | C | Minimal immediate-mode GUI toolkit |
+
+Dear ImGui, egui, and Nuklear are included as native desktop UI libraries, but
+they draw their own widgets instead of wrapping the operating system's standard
+controls. They are especially common in tools, editors, games, and debugging
+interfaces.
+
+## Related native UI and rendering libraries
+
+These libraries are useful building blocks for native applications, but are
+more focused than a complete desktop GUI framework. They cover lightweight
+widgets, window management, input, graphics, or game/tool interfaces.
+
+| Library | Platforms | Languages | Focus |
+| --- | --- | --- | --- |
+| [Nana](https://github.com/cnjinhao/nana) | Windows, macOS, Linux | C++ | Lightweight cross-platform GUI library |
+| [Ultimate++](https://www.ultimatepp.org/) | Windows, macOS, Linux | C++ | C++ rapid application development framework |
+| [NanoGUI](https://github.com/wjakob/nanogui) | Windows, macOS, Linux | C++ | Lightweight desktop GUI library for graphics applications |
+| [SDL](https://www.libsdl.org/) | Windows, macOS, Linux and more | C and bindings | Window, input, audio, and graphics foundation |
+| [GLFW](https://www.glfw.org/) | Windows, macOS, Linux and more | C and bindings | Window, context, and input library |
+| [raylib](https://www.raylib.com/) | Windows, macOS, Linux and more | C and bindings | Simple graphics and game application library |
+| [bgfx](https://bkaradzic.github.io/bgfx/) | Windows, macOS, Linux and more | C++ | Cross-platform rendering library |
+| [sokol](https://github.com/floooh/sokol) | Windows, macOS, Linux and more | C | Minimal single-header graphics and platform libraries |
+| [wgpu](https://wgpu.rs/) | Windows, macOS, Linux and more | Rust, C/C++ and bindings | Cross-platform GPU graphics API and rendering layer |
+
+This section does not include frameworks whose primary interface is rendered by
+HTML/CSS in a browser or webview, such as Electron, Tauri, or WebView2-based
+application shells.
+
+The libraries in this section are included as native application foundations,
+not as replacements for widget toolkits. SDL, GLFW, raylib, bgfx, sokol, and
+wgpu do not provide a complete standard desktop widget set by themselves.
+wgpu in particular is a rendering foundation:
+it provides a safe, portable graphics API based on WebGPU concepts, but does
+not provide windows, widgets, layout, or application chrome by itself.
 
 ## Excluded from this list
 
